@@ -28,6 +28,7 @@ server.listen(port, () => {
 //this bit of code is the connection manager. monitors incoming connections and relays messages
 io.on('connection', (socket) => {
     console.log('chat user connected:');
+    socket.emit('connected', { sID: socket.id, message: 'new connection' });
 
     //step 1 - recieve incoming messasges
     socket.on('chat_message', function(msg) {
@@ -39,7 +40,11 @@ io.on('connection', (socket) => {
       // it gets sent to all users, including the original message sender
 
       io.emit('new_message', { id: socket.id, message: msg });
-      
     })
+
+    socket.on('typing_event', function(user) {
+      io.emit('typing', user);
+    })
+
   });
 //LKvj79rNb1XY0SMMAAAB
