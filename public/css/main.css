@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: nintendoFont;
+    src: url('../fonts/nintendoFont.ttf')
+}
+
 body {
     font-size: 16px;
     background-color: #333;
@@ -20,16 +25,35 @@ main {
     grid-gap: 1em;
 }
 
+.font {
+    font-family: nintendoFont;
+    color: #000000;
+    font-size: 3em;
+}
+
+.font2 {
+    font-family: nintendoFont;
+    color: #000000;
+    font-size: 2em;
+}
+
 main section { padding: 1em; }
 
 #main-headline { text-align: center; margin-bottom: 0.8em; }
 
 label { display: block; padding-bottom: 0.5em;}
 
-textarea { width: 90%; height: 200px; }
+textarea { 
+    width: 90%; 
+    height: 200px; 
+    font-family: nintendoFont;
+    border-radius: 1em;
+}
 
 input[type="submit"] { 
     display: block; 
+    font-family: nintendoFont;
+    font-size: 2em;
     margin-top: 1em; 
     padding: 8px 12px; 
     border-radius: 0.5em; 
@@ -40,13 +64,18 @@ input[type="submit"] {
     clear: both;
     width: 45%;
     border-radius: 1em;
-    padding: 0.5em;
-    background-color: rgba(9, 200, 200, 0.8);
+    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #cdda1a;
+    font-family: nintendoFont;
+    font-size: 1.5em;
 }
 
 .other-messages {
     float: right;
-    background-color: rgba(225, 142, 17, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #cc64f5;
+    font-family: nintendoFont;
 }
 
 .title {
@@ -56,3 +85,92 @@ input[type="submit"] {
     font-size: 3em;
     color: aqua;
 }
+
+.center {
+    display: grid;
+    margin: 0 auto;
+}
+
+.margin {
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+.pad {
+    padding: 2em;
+}
+
+.bckgrd {
+    background-image: url(../images/bckgrd.jpg);
+}
+
+.textbckgrd {
+    background-image: url(../images/paper.jpg);
+    width: 100em;
+}
+
+/*------------ End Floats ------------*/
+
+/* _____________________________________
+
+   03. CSS Grid
+   _____________________________________ */
+
+   @supports (grid-area: auto) {
+
+    /*------------ Grid Items ------------*/
+  
+        .head, .main > *, .foot {
+          display: grid;
+          grid-template-columns: 1fr repeat(2, minmax(auto, 24em)) 1fr;
+        }
+  
+        .fluid {
+          display: grid;
+          grid-column: 1 / span 4;
+          grid-template-columns: 1fr;
+        }
+  
+        .one-item {
+          display: grid;
+          grid-column: 1 / span 4;
+          grid-template-columns: 1fr;
+        }
+
+        .one-itemReel {
+          display: grid;
+          grid-column: 2 / span 2;
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        .one-itemLB {
+          display: grid;
+          grid-column: 2 / span 2;
+          grid-template-columns: 1fr;
+        }
+  
+        .two-items {
+          display: grid;
+          grid-column: 2 / span 2;
+          grid-template-columns: repeat(1, 1fr);
+          justify-content: space-evenly;
+          row-gap: 1em;
+        }
+  
+        .three-items {
+          display: grid;
+          grid-column: 2 / span 2;
+          grid-template-columns: repeat(1, 1fr);
+          justify-content: space-evenly;
+          row-gap: 2em;
+          column-gap: 2em;
+        }
+  
+        .four-items {
+          display: grid;
+          grid-column: 2 / span 2;
+          grid-template-columns: repeat(1, 1fr);
+          justify-content: space-evenly;
+          row-gap: 2em;
+          column-gap: 2em;
+        }}
