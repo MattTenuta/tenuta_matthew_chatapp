@@ -26,7 +26,7 @@
           <form class="pad">
               <label for="message" class="font2">Type your message here</label>
               <textarea @focus="dispatchTypingEvent" v-model="message" id="textarea" class="message textbckgrd" autocomplete="off"></textarea>
-              <input @click.prevent="dispatchMessage" type="submit" value="Send">
+              <input class="biggerText" @click.prevent="dispatchMessage" type="submit" value="Send">
           </form>
       </section>
 

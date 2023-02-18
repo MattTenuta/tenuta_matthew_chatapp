@@ -37,7 +37,7 @@ const vm = createApp({
 
           socket.emit('chat_message', {
           content: this.message, 
-          user: this.username || 'anonymous',
+          user: this.username || 'Anonymous',
           id: this.socketID
           });
 
@@ -45,12 +45,13 @@ const vm = createApp({
         },
 
         dispatchTypingEvent() {
-          // send the typing notification to the server
-          socket.emit('typing_event', {user: this.username || 'anonymous'})
+
+          // This will bring the "is typing stuff up on screen when you click on the box"
+          socket.emit('typing_event', {user: this.username || 'Anonymous'})
 
           socket.emit('chat_message', {
             content: this.typing, 
-            user: this.username || 'anonymous',
+            user: this.username || 'Anonymous',
             });
         }
 
