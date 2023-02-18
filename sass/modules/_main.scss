@@ -59,6 +59,10 @@ input[type="submit"] {
     border-radius: 0.5em; 
 }
 
+.biggerText {
+    font-size: 1.5em;
+}
+
 .chat-messages {
     float: left;
     clear: both;
@@ -66,7 +70,7 @@ input[type="submit"] {
     border-radius: 1em;
     padding: 1em;
     background-color: rgba(0, 0, 0, 0.8);
-    color: #cdda1a;
+    color: #f353e9;
     font-family: nintendoFont;
     font-size: 1.5em;
 }
@@ -74,7 +78,7 @@ input[type="submit"] {
 .other-messages {
     float: right;
     background-color: rgba(0, 0, 0, 0.8);
-    color: #cc64f5;
+    color: #eee154;
     font-family: nintendoFont;
 }
 
