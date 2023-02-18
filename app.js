@@ -42,6 +42,12 @@ io.on('connection', (socket) => {
       io.emit('new_message', { id: socket.id, message: msg });
     })
 
+    socket.on('typing_message', function(type) {
+      console.log(type); // have a look at the message data
+
+      io.emit('new_typing', { id: socket.id, typing: type });
+    })
+
     socket.on('typing_event', function(user) {
       io.emit('typing', user);
     })

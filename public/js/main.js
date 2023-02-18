@@ -1,5 +1,6 @@
 // imports go at the top
 import ChatMsg from './components/ChatMessage.js';
+import TypeMsg from './components/TypingMessage.js';
 
 var socket = io();
 
@@ -25,7 +26,8 @@ const vm = createApp({
       socketID: '',
       message: '',
       messages: [],
-      username: ''
+      username: '',
+      typing: 'Is Typing...',
     }
   },
 
@@ -45,12 +47,18 @@ const vm = createApp({
         dispatchTypingEvent() {
           // send the typing notification to the server
           socket.emit('typing_event', {user: this.username || 'anonymous'})
+
+          socket.emit('chat_message', {
+            content: this.typing, 
+            user: this.username || 'anonymous',
+            });
         }
 
   },
 
   components: {
-    newmsg: ChatMsg
+    newmsg: ChatMsg,
+    newType: TypeMsg
   }
 
 
@@ -58,5 +66,5 @@ const vm = createApp({
 
 socket.addEventListener('connected', setUserID);
 socket.addEventListener('new_message', addNewMessage);
-socket.addEventListener('typing', handleTypingEvent);
+socket.addEventListener('new_typing', handleTypingEvent);
 
