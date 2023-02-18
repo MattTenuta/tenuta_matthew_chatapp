@@ -6,27 +6,32 @@
     <link rel="stylesheet" href="/css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/public/css/main.css">
 
     <title>Chat App with Node and Socket</title>
 </head>
-<body>
-    <h1 class="title">Pictochat but way fucking better</h1>
+<body class="bckgrd ">
     
-    <main id="app">
-      <section>
-          <h2>Input messages here:</h2>
+    <main id="app" class="main">
+
+        <section class="one-item center">
+            <img class="logo" src="/images/logo.png">
+        </section>
+
+      <section class="one-item center">
+          <h2 class="font">Picto-Chat it up!</h2>
+          <h3 class="font2">But First, input your name</h3>
           <input v-model="username" id="nickname" type="text" placeholder="Nickname?">
           
-          <form>
-              <label for="message">Something to say?</label>
-              <textarea @focus="dispatchTypingEvent" v-model="message" id="textarea" class="message" autocomplete="off"></textarea>
+          <form class="pad">
+              <label for="message" class="font2">Type your message here</label>
+              <textarea @focus="dispatchTypingEvent" v-model="message" id="textarea" class="message textbckgrd" autocomplete="off"></textarea>
               <input @click.prevent="dispatchMessage" type="submit" value="Send">
           </form>
       </section>
 
-      <section class="messages">
-          <h2>Receive messages here:</h2>
+      <section class="messages one-item margin">
+          <h2 class="font">Receive messages here:</h2>
           <ul id="messages">
               <!-- render a new message component for every message -->
               <newmsg v-for="message in messages" :msg="message"></newmsg>

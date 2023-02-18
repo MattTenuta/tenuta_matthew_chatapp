@@ -14,7 +14,7 @@ export default {
 
     template: `
     <article class="chat-messages" :class="{ 'other-messages' : matchedID}">
-        <h2>{{ msg.message.user }} says: </h2>
+        <h2>{{ msg.message.user }} => </h2>
         <p>{{ msg.message.content }} </p>
     </article>
     `
