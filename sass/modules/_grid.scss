@@ -1,0 +1,65 @@
+/*------------ End Floats ------------*/
+
+/* _____________________________________
+
+   03. CSS Grid
+   _____________________________________ */
+
+   @supports (grid-area: auto) {
+
+    /*------------ Grid Items ------------*/
+  
+        .head, .main > *, .foot {
+          display: grid;
+          grid-template-columns: 1fr repeat(2, minmax(auto, 24em)) 1fr;
+        }
+  
+        .fluid {
+          display: grid;
+          grid-column: 1 / span 4;
+          grid-template-columns: 1fr;
+        }
+  
+        .one-item {
+          display: grid;
+          grid-column: 1 / span 4;
+          grid-template-columns: 1fr;
+        }
+
+        .one-itemReel {
+          display: grid;
+          grid-column: 2 / span 2;
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        .one-itemLB {
+          display: grid;
+          grid-column: 2 / span 2;
+          grid-template-columns: 1fr;
+        }
+  
+        .two-items {
+          display: grid;
+          grid-column: 2 / span 2;
+          grid-template-columns: repeat(1, 1fr);
+          justify-content: space-evenly;
+          row-gap: 1em;
+        }
+  
+        .three-items {
+          display: grid;
+          grid-column: 2 / span 2;
+          grid-template-columns: repeat(1, 1fr);
+          justify-content: space-evenly;
+          row-gap: 2em;
+          column-gap: 2em;
+        }
+  
+        .four-items {
+          display: grid;
+          grid-column: 2 / span 2;
+          grid-template-columns: repeat(1, 1fr);
+          justify-content: space-evenly;
+          row-gap: 2em;
+          column-gap: 2em;
+        }}
